@@ -36,7 +36,7 @@ function App() {
   const sortAllEntries = (entries) => {
     setBlogPosts(entriesFilter(entries, "blogPost"));
     setExtBlogPosts(entriesFilter(entries, "extendedBlogPost"));
-    setHeroSection(entriesFilter(entries, "heroSection"));
+    //setHeroSection(entriesFilter(entries, "heroSection"));
     setCatergoryCards(entriesFilter(entries, "categoryCard"));
     setAboutUs(entriesFilter(entries, "aboutUs"));
     setFooter(entriesFilter(entries, "footer"));

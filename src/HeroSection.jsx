@@ -10,7 +10,7 @@ const client = createClient({
 
 function HeroSection() {
   const [heroData, setHeroData] = useState(null);
-  const { title, picture, introduction } = heroData;
+
   useEffect(() => {
     client
       .getEntries({
@@ -42,7 +42,7 @@ function HeroSection() {
   if (!heroData) {
     return null;
   }
-
+  const { title, picture, introduction } = heroData;
   return (
     <div className="hero-section">
       <h1>{title}</h1>
