@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import "./App.css";
+import HeroSection from "./HeroSection";
+import Header from "./Header";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -33,13 +36,22 @@ function App() {
   const sortAllEntries = (entries) => {
     setBlogPosts(entriesFilter(entries, "blogPost"));
     setExtBlogPosts(entriesFilter(entries, "extendedBlogPost"));
-    setHeroSection(entriesFilter(entries, "heroSection"));
+    //setHeroSection(entriesFilter(entries, "heroSection"));
     setCatergoryCards(entriesFilter(entries, "categoryCard"));
     setAboutUs(entriesFilter(entries, "aboutUs"));
     setFooter(entriesFilter(entries, "footer"));
   };
-
-  return <div></div>;
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HeroSection />} />
+          {/* <Route path="/about" element={<Header />} /> */}
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
