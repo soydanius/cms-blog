@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import "./App.css";
 import HeroSection from "./HeroSection";
 import Header from "./Header";
+import BlogPost from "./BlogPost";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const client = createClient({
@@ -41,14 +42,19 @@ function App() {
     setAboutUs(entriesFilter(entries, "aboutUs"));
     setFooter(entriesFilter(entries, "footer"));
   };
+
   return (
+    
     <Router>
       <div className="App">
         <Header />
+        
         <Routes>
           <Route path="/" element={<HeroSection />} />
           {/* <Route path="/about" element={<Header />} /> */}
+          <Route path="blogs" element={<BlogPost {...{...blogPosts}}/>}/>
         </Routes>
+        {/* <BlogPost {...{...blogPosts}}/> */}
       </div>
     </Router>
   );
