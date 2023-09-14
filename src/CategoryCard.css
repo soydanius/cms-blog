@@ -1,0 +1,19 @@
+.category-card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.category-card {
+  flex: 1;
+  text-align: center;
+}
+
+.category-card h2 {
+  font-size: 20px;
+}
+
+.category-card img {
+  max-width: 100%;
+  height: auto;
+}

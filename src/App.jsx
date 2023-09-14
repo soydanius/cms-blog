@@ -4,6 +4,7 @@ import "./App.css";
 import HeroSection from "./HeroSection";
 import Header from "./Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CategoryCard from "./CategoryCard";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -49,6 +50,7 @@ function App() {
           <Route path="/" element={<HeroSection />} />
           {/* <Route path="/about" element={<Header />} /> */}
         </Routes>
+        <CategoryCard />
       </div>
     </Router>
   );
