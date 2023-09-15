@@ -2,19 +2,6 @@
   max-width: 1290px;
 }
 
-@keyframes shine {
-  0% {
-    color: #fff;
-  }
-  50% {
-    color: #ffc339;
-  }
-  100% {
-    color: #fff;
-  }
-}
-body {
-}
 .header-content {
   display: flex;
   justify-content: space-between;

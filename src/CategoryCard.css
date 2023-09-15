@@ -3,19 +3,20 @@
     color: #fff;
   }
   50% {
-    color: #ffc339;
+    color: rgb(0, 95, 151);
   }
   100% {
     color: #fff;
   }
 }
 .category-card-container {
-  margin-top: 30px;
-  padding: 20px;
+  padding: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   gap: 25px;
-  /* background-color: #ffc43c28; */
+  /* background-color: rgba(0, 96, 151, 0.749); */
+
   animation: shine 5s linear infinite;
 }
 
@@ -29,8 +30,8 @@
   align-items: center;
   padding: 15px;
   margin: 0 20px 0 20px;
-  background-image: url("/Users/aylas/Desktop/cms-blog/sky.jpeg");
-  opacity: 0.9;
+  background-color: #7fa76c80;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
