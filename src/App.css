@@ -46,3 +46,8 @@ body {
 .header-right nav ul li a.active {
   color: cornflowerblue;
 }
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

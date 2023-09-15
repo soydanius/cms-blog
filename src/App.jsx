@@ -6,8 +6,7 @@ import HomePage from "./pages/HomePage";
 import CookingWithKidsPage from "./pages/CookingWithKidsPage";
 import CraftyCornerPage from "./pages/CraftyCornerPage";
 import PlaytimeIdeasPage from "./pages/PlaytimeIdeasPage";
-import CategoryCard from "./CategoryCard";
-import AboutUsSection from "./AboutUsSection";
+import AboutUsPage from "./pages/AboutUsPage";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -49,6 +48,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="about-us" element={<AboutUsPage />} />
         <Route
           path="cooking-with-kids"
           element={
