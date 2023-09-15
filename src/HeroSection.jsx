@@ -48,6 +48,7 @@ function HeroSection() {
     <div className="hero-section">
       <div className="hero-content">
         <h1>{title}</h1>
+
         <div className="hero-introduction">{renderRichText(introduction)}</div>
       </div>
       <img src={picture.fields.file.url} alt={picture.fields.description} />

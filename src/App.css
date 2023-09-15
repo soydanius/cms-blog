@@ -4,14 +4,23 @@
   padding: 2rem;
 }
 
-body {
-  background-color: #f8f1ee;
+@keyframes shine {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #ffc339;
+  }
+  100% {
+    color: #fff;
+  }
 }
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
+  margin: 20px;
 }
 
 .header-left {
@@ -23,6 +32,7 @@ body {
   font-size: 2rem;
   display: flex;
   align-items: center;
+  animation: shine 5s linear infinite;
 }
 
 .header-left img {
@@ -33,7 +43,7 @@ body {
 .header-right nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   font-size: 1.2rem;
 }
 

@@ -2,7 +2,9 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  margin: 30px 0;
+
+  background: linear-gradient(to bottom, rgba(71, 181, 208, 0.538), white);
+  padding-bottom: 30px;
 }
 
 .hero-content {
@@ -17,14 +19,20 @@
 }
 
 .hero-introduction {
-  font-size: 20px;
-  padding: 20px 10px;
-  border: solid 2px #47b5d0;
-  border-radius: 8px;
-  margin-left: 10px;
-  background-color: #fff9db;
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  color: rgb(20, 46, 110);
 }
 
 .hero-content h1 {
-  padding: 0 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffc53c;
+  font-family: fantasy;
+
+  font-size: 25px;
 }
