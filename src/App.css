@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 1290px;
 }
 
 @keyframes shine {
@@ -15,24 +13,28 @@
     color: #fff;
   }
 }
+body {
+}
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 20px;
-  margin: 20px;
+  /* background: linear-gradient(to bottom, rgba(71, 181, 208, 0.538), white); */
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  margin-left: 20px;
 }
 
 .header-left h1 {
   font-size: 2rem;
   display: flex;
   align-items: center;
-  animation: shine 5s linear infinite;
+  color: #ffc339;
+  /* animation: shine 5s linear infinite; */
 }
 
 .header-left img {
@@ -45,13 +47,14 @@
   display: flex;
   gap: 2rem;
   font-size: 1.2rem;
+  margin-right: 20px;
 }
 
 .header-right nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: rgb(0, 95, 151);
 }
 
 .header-right nav ul li a.active {
-  color: cornflowerblue;
+  color: #ffc43cd3;
 }

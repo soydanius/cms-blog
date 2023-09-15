@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-
-  background: linear-gradient(to bottom, rgba(71, 181, 208, 0.538), white);
+  background-color: rgba(255, 174, 124, 0.809);
   padding-bottom: 30px;
 }
 
@@ -20,19 +19,17 @@
 
 .hero-introduction {
   font-size: 18px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Nunito", sans-serif;
   border-radius: 20px;
   text-align: center;
   padding: 10px;
-  color: rgb(20, 46, 110);
+  color: white;
 }
 
 .hero-content h1 {
   margin-bottom: 10px;
   text-align: center;
-  color: #ffc53c;
-  font-family: fantasy;
+  color: #de5924;
 
   font-size: 25px;
 }
