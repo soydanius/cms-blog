@@ -4,6 +4,8 @@ import "./App.css";
 import HeroSection from "./HeroSection";
 import Header from "./Header";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import CategoryCard from "./CategoryCard";
+import AboutUsSection from "./AboutUsSection";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -42,12 +44,32 @@ function App() {
     setFooter(entriesFilter(entries, "footer"));
   };
   return (
+    //   <Router>
+    //     <div className="App">
+    //       <Header />
+    //       <Routes>
+    //         <Route path="/" element={<HeroSection />} />
+    //       </Routes>
+    //       <CategoryCard />
+    //       <AboutUsSection />
+    //     </div>
+    //   </Router>
+    // );
     <Router>
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<HeroSection />} />
-          {/* <Route path="/about" element={<Header />} /> */}
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <CategoryCard />
+                <AboutUsSection />
+              </>
+            }
+          />
+          <Route path="/about" element={<AboutUsSection />} />
         </Routes>
       </div>
     </Router>
