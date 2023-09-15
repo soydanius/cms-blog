@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import "./App.css";
-import HeroSection from "./HeroSection";
-import Header from "./Header";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CookingWithKidsPage from "./pages/CookingWithKidsPage";
+import CraftyCornerPage from "./pages/CraftyCornerPage";
+import PlaytimeIdeasPage from "./pages/PlaytimeIdeasPage";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -42,15 +44,38 @@ function App() {
     setFooter(entriesFilter(entries, "footer"));
   };
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          {/* <Route path="/about" element={<Header />} /> */}
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="cooking-with-kids"
+          element={
+            <CookingWithKidsPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+        <Route
+          path="crafty-corner"
+          element={
+            <CraftyCornerPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+        <Route
+          path="playtime-ideas"
+          element={
+            <PlaytimeIdeasPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
