@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import CookingWithKidsPage from "./pages/CookingWithKidsPage";
 import CraftyCornerPage from "./pages/CraftyCornerPage";
 import PlaytimeIdeasPage from "./pages/PlaytimeIdeasPage";
+import CategoryCard from "./CategoryCard";
+import AboutUsSection from "./AboutUsSection";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
