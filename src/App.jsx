@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import "./App.css";
-import HeroSection from "./HeroSection";
-import Header from "./Header";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CategoryCard from "./CategoryCard";
-import AboutUsSection from "./AboutUsSection";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CookingWithKidsPage from "./pages/CookingWithKidsPage";
+import CraftyCornerPage from "./pages/CraftyCornerPage";
+import PlaytimeIdeasPage from "./pages/PlaytimeIdeasPage";
+import AboutUsPage from "./pages/AboutUsPage";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -44,35 +45,39 @@ function App() {
     setFooter(entriesFilter(entries, "footer"));
   };
   return (
-    //   <Router>
-    //     <div className="App">
-    //       <Header />
-    //       <Routes>
-    //         <Route path="/" element={<HeroSection />} />
-    //       </Routes>
-    //       <CategoryCard />
-    //       <AboutUsSection />
-    //     </div>
-    //   </Router>
-    // );
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <HeroSection />
-                <CategoryCard />
-                <AboutUsSection />
-              </>
-            }
-          />
-          <Route path="/about" element={<AboutUsSection />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="about-us" element={<AboutUsPage />} />
+        <Route
+          path="cooking-with-kids"
+          element={
+            <CookingWithKidsPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+        <Route
+          path="crafty-corner"
+          element={
+            <CraftyCornerPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+        <Route
+          path="playtime-ideas"
+          element={
+            <PlaytimeIdeasPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 

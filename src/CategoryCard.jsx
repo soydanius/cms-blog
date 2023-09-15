@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import "./CategoryCard.css";
+import { Link } from "react-router-dom";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -25,16 +26,20 @@ function CategoryCard() {
       });
   }, []);
 
+  const routeNames = ["crafty-corner", "cooking-with-kids", "playtime-ideas"];
+
   return (
     <div className="category-card-container">
-      {categoryData.map((category) => (
-        <div key={category.sys.id} className="category-card">
-          <img
-            src={category.fields.image.fields.file.url}
-            alt={category.fields.title}
-          />
-          <h2>{category.fields.title}</h2>
-        </div>
+      {categoryData.map((category, index) => (
+        <Link to={routeNames[index]}>
+          <div key={category.sys.id} className="category-card">
+            <img
+              src={category.fields.image.fields.file.url}
+              alt={category.fields.title}
+            />
+            <h2>{category.fields.title}</h2>
+          </div>
+        </Link>
       ))}
     </div>
   );
