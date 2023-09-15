@@ -29,11 +29,11 @@ function CategoryCard() {
     <div className="category-card-container">
       {categoryData.map((category) => (
         <div key={category.sys.id} className="category-card">
-          <h2>{category.fields.title}</h2>
           <img
             src={category.fields.image.fields.file.url}
             alt={category.fields.title}
           />
+          <h2>{category.fields.title}</h2>
         </div>
       ))}
     </div>
