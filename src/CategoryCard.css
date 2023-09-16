@@ -16,8 +16,8 @@
   justify-content: space-between;
   gap: 25px;
   background-color: #47b5d0;
-
-  animation: shine 5s linear infinite;
+  color: white;
+  /* animation: shine 5s linear infinite; */
 }
 
 .category-card {
@@ -43,6 +43,7 @@
   margin: 10px 0 0 0;
   /* color: #07728d; */
   color: rgb(0, 95, 151);
+  animation: shine 5s linear infinite;
 }
 
 .category-card img {
