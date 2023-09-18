@@ -30,6 +30,7 @@ function CategoryCard() {
 
   return (
     <div className="category-card-container">
+      <h1> Learn & Play!</h1>
       {categoryData.map((category, index) => (
         <Link to={routeNames[index]}>
           <div key={category.sys.id} className="category-card">

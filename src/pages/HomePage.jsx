@@ -2,6 +2,7 @@ import Header from "../Header";
 import HeroSection from "../HeroSection";
 import CategoryCard from "../CategoryCard";
 import AboutUsSection from "../AboutUsSection";
+import Footer from "../Footer";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <CategoryCard />
       <AboutUsSection />
+      <Footer />
     </>
   );
 };
