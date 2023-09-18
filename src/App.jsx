@@ -4,6 +4,9 @@ import "./App.css";
 import HeroSection from "./HeroSection";
 import Header from "./Header";
 import BlogPost from "./BlogPost";
+import BlogPostRoll from "./BlogPostRoll";
+import ExtendedBlogPost from "./ExtendedBlogPost";
+import ExtendedBlogPostRoll from "./ExtendedBlogPostRoll";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const client = createClient({
@@ -48,13 +51,18 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+       
+        <ExtendedBlogPostRoll extBlogPosts={extBlogPosts} />
         
         <Routes>
           <Route path="/" element={<HeroSection />} />
-          {/* <Route path="/about" element={<Header />} /> */}
-          <Route path="blogs" element={<BlogPost {...{...blogPosts}}/>}/>
+          <Route path="/about" element={<Header />} />
+          {/* <Route path="/xxx/blog/i" element={<BlogPost blogPosts={blogPosts} i={0}/>}/> */}
+          {/* <Route path="/XYZ/blogPosts" element={<BlogPostRoll blogPosts={blogPosts}/>} /> */}
+          {/* <Route path="/XYZ/extendedBlogPost/j" element={<ExtendedBlogPost blogPosts={blogPosts} i={0}/>} /> */}
+
         </Routes>
-        {/* <BlogPost {...{...blogPosts}}/> */}
+       
       </div>
     </Router>
   );
