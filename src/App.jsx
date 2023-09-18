@@ -44,6 +44,7 @@ function App() {
     setAboutUs(entriesFilter(entries, "aboutUs"));
     setFooter(entriesFilter(entries, "footer"));
   };
+
   return (
     <div className="App">
       <Routes>
