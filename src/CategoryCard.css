@@ -1,0 +1,55 @@
+@keyframes shine {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: rgb(0, 95, 151);
+  }
+  100% {
+    color: #fff;
+  }
+}
+.category-card-container {
+  padding: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  background-color: #47b5d0;
+  color: white;
+  /* animation: shine 5s linear infinite; */
+}
+
+.category-card {
+  flex: 1;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0 20px 0 20px;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  border: 2px solid #fff;
+  border-radius: 3%;
+}
+
+.category-card h2 {
+  font-size: 24px;
+  margin: 10px 0 0 0;
+  /* color: #07728d; */
+  color: rgb(0, 95, 151);
+  animation: shine 5s linear infinite;
+}
+
+.category-card img {
+  width: 100px;
+  height: 100px;
+  /* border-bottom: 2px solid #fcfcfc; */
+  object-fit: cover;
+  background-color: transparent;
+}

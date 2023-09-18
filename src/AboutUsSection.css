@@ -1,0 +1,25 @@
+.about-us-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 50px;
+  margin: 15px 0 15px 0;
+
+  background-color: rgba(236, 185, 84, 0.71);
+}
+
+.about-us-section h1 {
+  width: 100%;
+  text-align: end;
+  color: #de5924;
+}
+.about-us-section hr {
+  width: 5px;
+  background-color: #d4e5ff;
+  border: #d5e5ff;
+}
+.description {
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  color: white;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import "./HeroSection.css";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -45,9 +46,12 @@ function HeroSection() {
   const { title, picture, introduction } = heroData;
   return (
     <div className="hero-section">
-      <h1>{title}</h1>
+      <div className="hero-content">
+        <h1>{title}</h1>
+
+        <div className="hero-introduction">{renderRichText(introduction)}</div>
+      </div>
       <img src={picture.fields.file.url} alt={picture.fields.description} />
-      <div className="hero-introduction">{renderRichText(introduction)}</div>
     </div>
   );
 }

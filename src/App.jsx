@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { createClient } from "contentful";
 import "./App.css";
-import HeroSection from "./HeroSection";
-import Header from "./Header";
-import BlogPost from "./BlogPost";
-import BlogPostRoll from "./BlogPostRoll";
-import ExtendedBlogPost from "./ExtendedBlogPost";
-import ExtendedBlogPostRoll from "./ExtendedBlogPostRoll";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CookingWithKidsPage from "./pages/CookingWithKidsPage";
+import CraftyCornerPage from "./pages/CraftyCornerPage";
+import PlaytimeIdeasPage from "./pages/PlaytimeIdeasPage";
+import AboutUsPage from "./pages/AboutUsPage";
 
 const client = createClient({
   space: import.meta.env.VITE_SPACE_ID,
@@ -47,24 +46,39 @@ function App() {
   };
 
   return (
-    
-    <Router>
-      <div className="App">
-        <Header />
-       
-        <ExtendedBlogPostRoll extBlogPosts={extBlogPosts} />
-        
-        <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/about" element={<Header />} />
-          {/* <Route path="/xxx/blog/i" element={<BlogPost blogPosts={blogPosts} i={0}/>}/> */}
-          {/* <Route path="/XYZ/blogPosts" element={<BlogPostRoll blogPosts={blogPosts}/>} /> */}
-          {/* <Route path="/XYZ/extendedBlogPost/j" element={<ExtendedBlogPost blogPosts={blogPosts} i={0}/>} /> */}
-
-        </Routes>
-       
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="about-us" element={<AboutUsPage />} />
+        <Route
+          path="cooking-with-kids"
+          element={
+            <CookingWithKidsPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+        <Route
+          path="crafty-corner"
+          element={
+            <CraftyCornerPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+        <Route
+          path="playtime-ideas"
+          element={
+            <PlaytimeIdeasPage
+              blogPosts={blogPosts}
+              extBlogPosts={extBlogPosts}
+            />
+          }
+        />
+      </Routes>
+    </div>
   );
 }
 
