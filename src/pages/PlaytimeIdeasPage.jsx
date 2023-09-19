@@ -1,4 +1,4 @@
-import "./categoryPage.css";
+import "./CategoryPage.css";
 import Header from "../Header";
 import BlogPost from "../BlogPost";
 import ExtendedBlogPost from "../ExtendedBlogPost";
@@ -12,8 +12,8 @@ const PlaytimeIdeasPage = ({ blogPosts, extBlogPosts }) => {
       </div>
       {/* Blog posts props require blogPosts and index of the specific Blog Post */}
       <div>
-        <BlogPost blogPosts = {blogPosts} i={0} />
-        <BlogPost blogPosts = {blogPosts} i={1} />
+        <BlogPost blogPosts={blogPosts} i={0} />
+        <BlogPost blogPosts={blogPosts} i={1} />
       </div>
     </>
   );
