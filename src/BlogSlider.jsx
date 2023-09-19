@@ -2,7 +2,7 @@ import "./BlogSlider.css";
 import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Icon } from 'semantic-ui-react';
 
 
 const slides = [0, 1, 2, 3];
@@ -42,20 +42,20 @@ function BlogSlider(props) {
   };
 
   
-console.log(extBlogPosts)
+//console.log(extBlogPosts)
   return (
     <div className="BlogSlider">
-      <Slider {...settings}>
-      {/* {Object.keys(extBlogPosts).length === 0 ? "... Loading" : */}
-          {slides.map((index) => (
+      <Slider className="Slider" {...settings}>
+        {slides.map((index) => (
         <div className={index === slidesIndex ? "slide activeSlide" : "slide"}>
           <Card className="card" >
-          <Image src={Object.keys(extBlogPosts).length === 0 ? "... Loading" : extBlogPosts[index].fields.pictures[0].fields.file.url} wrapped ui={false} />
-          <Card.Content>
+          <Image className="cardImage" src={Object.keys(extBlogPosts).length === 0 ? "... Loading" : extBlogPosts[index].fields.pictures[0].fields.file.url} wrapped ui={false} />
+          <Card.Content className="cardContent">
           <Card.Header>{Object.keys(extBlogPosts).length === 0 ? "... Loading" :extBlogPosts[index].fields.extendedBlogPostTitle}</Card.Header>
-          <Card.Meta>
-          <a href={(index>2 || index<1)? "cooking-with-kids": "crafty-corner"}>Read more in this category...</a>
+          <Card.Meta className="metaLink">
+          <a className="link" href={(index>2 || index<1)? "cooking-with-kids": "crafty-corner"}>Read more in this category...</a>
           </Card.Meta>
+          
           </Card.Content>
           </Card> 
         </div>
