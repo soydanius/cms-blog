@@ -1,0 +1,53 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import 'semantic-ui-css/semantic.min.css';
+
+.BlogSlider {
+  width: 100%;
+  margin: 5rem auto;
+  height: 600px;
+  padding: 0;
+}
+
+
+
+.slide img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.slide {
+  transform: scale(0.7);
+  transition: transform 300ms;
+  opacity: 0.2;
+}
+
+.activeSlide {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.arrow {
+  background-color: #fff;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: #68edff;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+
+.prev {
+  left: 0%;
+  top: 50%;
+}

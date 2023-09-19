@@ -48,7 +48,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage 
+        blogPosts={blogPosts}
+        extBlogPosts={extBlogPosts}
+        />} />
         <Route path="about-us" element={<AboutUsPage />} />
         <Route
           path="cooking-with-kids"
