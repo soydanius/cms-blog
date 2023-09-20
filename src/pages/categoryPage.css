@@ -25,6 +25,7 @@
 
 .blog-post-container {
   display: flex;
+
   margin-bottom: 30px;
   border: 1px solid #ddd;
   border-radius: 5px;

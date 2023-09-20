@@ -1,10 +1,11 @@
 .footer-content {
   display: flex;
   justify-content: space-around;
-  margin: auto;
 }
 
 .footer-item {
   font-size: 18px;
   color: rgb(0, 95, 151);
+  margin-bottom: 20px;
+  padding: 20px;
 }
