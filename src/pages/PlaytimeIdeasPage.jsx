@@ -7,9 +7,9 @@ const PlaytimeIdeasPage = ({ blogPosts, extBlogPosts }) => {
   return (
     <>
       <Header />
-      <div>
-        <h1 className="category-title">Playtime Ideas</h1>
-      </div>
+
+      <h1 className="category-title">Playtime Ideas</h1>
+
       {/* Blog posts props require blogPosts and index of the specific Blog Post */}
       <div>
         <BlogPost blogPosts={blogPosts} i={0} />
