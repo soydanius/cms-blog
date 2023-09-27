@@ -8,40 +8,19 @@ const client = createClient({
 });
 
 function AboutUsSection() {
-  const [aboutUsData, setAboutUsData] = useState(null);
-
-  useEffect(() => {
-    client
-      .getEntries({
-        content_type: "aboutUs",
-      })
-      .then((response) => {
-        if (response.items && response.items[0]) {
-          setAboutUsData(response.items[0].fields);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching About Us data:", error);
-      });
-  }, []);
-
-  if (!aboutUsData) {
-    return null;
-  }
-
-  const { title, description } = aboutUsData;
-
-  const renderRichText = (richTextField) => {
-    const options = {};
-
-    return documentToReactComponents(richTextField, options);
-  };
-
   return (
     <div className="about-us-section">
-      <h1>{title}</h1>
+      <h1>About Us</h1>
       <hr />
-      <div className="description">{renderRichText(description)}</div>
+      <div className="description">
+        <p>
+          At Happy Homemade, we're dedicated to unleashing creativity and
+          providing inspiration. Our platform offers a diverse range of creative
+          content, from DIY projects to imaginative ideas for kids and adults
+          alike. Join us in exploring a world of endless possibilities and let
+          your creative journey begin with us.
+        </p>
+      </div>
     </div>
   );
 }
