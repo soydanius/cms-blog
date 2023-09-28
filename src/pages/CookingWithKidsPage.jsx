@@ -1,16 +1,30 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./CategoryPage.css";
 import Header from "../Header";
-import ExtendedBlogPost from "../ExtendedBlogPost";
+import BlogPost from "../BlogPost";
 
-const CookingWithKidsPage = ({ blogPosts, extBlogPosts }) => {
+const CookingWithKidsPage = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const getBlogPosts = async () => {
+      const response = await axios.get(
+        "http://localhost:3000/blog/cooking_with_kids"
+      );
+      console.log(response.data);
+      setBlogPosts(response.data);
+    };
+    getBlogPosts();
+  }, []);
+
   return (
     <>
       <Header />
       <h1 className="category-title">Cooking with Kids</h1>
-      {/* Blog posts props require blogPosts and index of the specific Blog Post */}
       <div>
-        <ExtendedBlogPost extBlogPosts={extBlogPosts} i={0} />
-        <ExtendedBlogPost extBlogPosts={extBlogPosts} i={3} />
+        {/*  <BlogPost />
+        <BlogPost /> */}
       </div>
     </>
   );

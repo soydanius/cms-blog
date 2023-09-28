@@ -5,14 +5,13 @@ import AboutUsSection from "../AboutUsSection";
 import Footer from "../Footer";
 import BlogSlider from "../BlogSlider";
 
-const HomePage = (props) => {
-const {extBlogPosts} = props;
+const HomePage = () => {
   return (
     <>
       <Header />
       <HeroSection />
       <CategoryCard />
-      <BlogSlider extBlogPosts={extBlogPosts}/>
+      {/* <BlogSlider /> */}
       <AboutUsSection />
       <Footer />
     </>

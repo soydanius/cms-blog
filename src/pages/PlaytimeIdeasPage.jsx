@@ -1,19 +1,30 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import "./CategoryPage.css";
 import Header from "../Header";
 import BlogPost from "../BlogPost";
-import ExtendedBlogPost from "../ExtendedBlogPost";
 
-const PlaytimeIdeasPage = ({ blogPosts, extBlogPosts }) => {
+const PlaytimeIdeasPage = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const getBlogPosts = async () => {
+      const response = await axios.get(
+        "http://localhost:3000/blog/playtime_ideas"
+      );
+      console.log(response.data);
+      setBlogPosts(response.data);
+    };
+    getBlogPosts();
+  }, []);
+
   return (
     <>
       <Header />
-
       <h1 className="category-title">Playtime Ideas</h1>
-
-      {/* Blog posts props require blogPosts and index of the specific Blog Post */}
       <div>
-        <BlogPost blogPosts={blogPosts} i={0} />
-        <BlogPost blogPosts={blogPosts} i={1} />
+        {/* <BlogPost />
+        <BlogPost /> */}
       </div>
     </>
   );
