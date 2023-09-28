@@ -2,12 +2,12 @@ import "./BlogSlider.css";
 import { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { Card, Image, Icon } from "semantic-ui-react";
+import { Card, Image } from "semantic-ui-react";
 
-const slides = [0, 1, 2, 3];
+
 
 function BlogSlider(props) {
-  const { extBlogPosts } = props;
+  const { allBlogPosts } = props;
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -24,7 +24,7 @@ function BlogSlider(props) {
       </div>
     );
   };
-
+  const slides = [0, 1, 2, 3, 4, 5]
   const [slidesIndex, setSlidesIndex] = useState(0);
 
   const settings = {
@@ -39,39 +39,37 @@ function BlogSlider(props) {
     beforeChange: (current, next) => setSlidesIndex(next),
   };
 
-  //console.log(extBlogPosts)
+  //console.log(allBlogPosts)
+  
   return (
     <div className="BlogSlider">
       <Slider className="Slider" {...settings}>
         {slides.map((index) => (
-          <div
+          <div key={slides[index]}
             className={index === slidesIndex ? "slide activeSlide" : "slide"}
           >
             <Card className="card">
               <Image
                 className="cardImage"
                 src={
-                  Object.keys(extBlogPosts).length === 0
+                  allBlogPosts.length === 0
                     ? "... Loading"
-                    : extBlogPosts[index].fields.pictures[0].fields.file.url
+                    : allBlogPosts[index].image
                 }
                 wrapped
                 ui={false}
               />
               <Card.Content className="cardContent">
                 <Card.Header style={{ color: " #47b5d0" }}>
-                  {Object.keys(extBlogPosts).length === 0
+                  {allBlogPosts.length === 0
                     ? "... Loading"
-                    : extBlogPosts[index].fields.extendedBlogPostTitle}
+                    : allBlogPosts[index].title}
+                  
                 </Card.Header>
                 <Card.Meta className="metaLink">
                   <a
                     className="link"
-                    href={
-                      index > 2 || index < 1
-                        ? "cooking-with-kids"
-                        : "crafty-corner"
-                    }
+                    href={allBlogPosts.length===0 ? "... Loading" : allBlogPosts[index].category==='crafty_corner'?"crafty-corner": allBlogPosts[index].category==='playtime_ideas'?"playtime-ideas":"cooking-with-kids"}
                   >
                     Read more in this category...
                   </a>

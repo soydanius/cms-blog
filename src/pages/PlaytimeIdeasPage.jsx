@@ -3,6 +3,7 @@ import axios from "axios";
 import "./CategoryPage.css";
 import Header from "../Header";
 import BlogPost from "../BlogPost";
+import Footer from "../Footer";
 
 const PlaytimeIdeasPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -12,7 +13,7 @@ const PlaytimeIdeasPage = () => {
       const response = await axios.get(
         "http://localhost:3000/blog/playtime_ideas"
       );
-      console.log(response.data);
+      //console.log(response.data);
       setBlogPosts(response.data);
     };
     getBlogPosts();
@@ -23,9 +24,12 @@ const PlaytimeIdeasPage = () => {
       <Header />
       <h1 className="category-title">Playtime Ideas</h1>
       <div>
-        {/* <BlogPost />
-        <BlogPost /> */}
+        {
+        blogPosts.map((index)=>(<BlogPost blogPosts={blogPosts} i={blogPosts.indexOf(index)}/>))
+        }
+       
       </div>
+      <Footer />
     </>
   );
 };

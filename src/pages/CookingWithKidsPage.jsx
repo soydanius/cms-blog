@@ -3,6 +3,7 @@ import axios from "axios";
 import "./CategoryPage.css";
 import Header from "../Header";
 import BlogPost from "../BlogPost";
+import Footer from "../Footer";
 
 const CookingWithKidsPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -12,7 +13,7 @@ const CookingWithKidsPage = () => {
       const response = await axios.get(
         "http://localhost:3000/blog/cooking_with_kids"
       );
-      console.log(response.data);
+      //console.log(response.data);
       setBlogPosts(response.data);
     };
     getBlogPosts();
@@ -23,9 +24,11 @@ const CookingWithKidsPage = () => {
       <Header />
       <h1 className="category-title">Cooking with Kids</h1>
       <div>
-        {/*  <BlogPost />
-        <BlogPost /> */}
+      {
+        blogPosts.map((index)=>(<BlogPost blogPosts={blogPosts} i={blogPosts.indexOf(index)}/>))
+        }
       </div>
+      <Footer />
     </>
   );
 };
