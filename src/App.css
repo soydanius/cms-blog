@@ -1,6 +1,8 @@
 #root {
-  max-width: 1290px;
   margin: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes headershine {

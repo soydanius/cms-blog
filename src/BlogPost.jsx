@@ -3,22 +3,18 @@ import { useState, useEffect } from "react";
 import "/src/pages/CategoryPage.css";
 
 const BlogPost = (props) => {
-  const { blogPosts, i} = props;
+  const { blogPosts, i } = props;
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    blogPosts.length === 0
-      ? setDate("")
-      : setDate(blogPosts[i].date);
+    blogPosts.length === 0 ? setDate("") : setDate(blogPosts[i].date);
   });
   const blogDate = new Date(date);
   const blogYear = blogDate.getFullYear();
   const blogMonth = blogDate.getMonth() + 1;
   const blogDay = blogDate.getDate();
- 
- 
-  return (
 
+  return (
     <div className="blog-post-container">
       {blogPosts.length === 0 ? (
         "... Loading"
@@ -30,6 +26,7 @@ const BlogPost = (props) => {
               alt={blogPosts[i].title}
               className="blog-post-image"
             />
+            <br></br>
             <time date={blogPosts[i].date} className="blog-post-time">
               First published: {blogYear}-{blogMonth}-{blogDay}
             </time>

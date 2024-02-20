@@ -4,8 +4,6 @@ import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { Card, Image } from "semantic-ui-react";
 
-
-
 function BlogSlider(props) {
   const { allBlogPosts } = props;
 
@@ -24,7 +22,7 @@ function BlogSlider(props) {
       </div>
     );
   };
-  const slides = [0, 1, 2, 3, 4, 5]
+  const slides = [0, 1, 2, 3, 4, 5];
   const [slidesIndex, setSlidesIndex] = useState(0);
 
   const settings = {
@@ -40,12 +38,13 @@ function BlogSlider(props) {
   };
 
   //console.log(allBlogPosts)
-  
+
   return (
     <div className="BlogSlider">
       <Slider className="Slider" {...settings}>
         {slides.map((index) => (
-          <div key={slides[index]}
+          <div
+            key={slides[index]}
             className={index === slidesIndex ? "slide activeSlide" : "slide"}
           >
             <Card className="card">
@@ -64,12 +63,19 @@ function BlogSlider(props) {
                   {allBlogPosts.length === 0
                     ? "... Loading"
                     : allBlogPosts[index].title}
-                  
                 </Card.Header>
                 <Card.Meta className="metaLink">
                   <a
                     className="link"
-                    href={allBlogPosts.length===0 ? "... Loading" : allBlogPosts[index].category==='crafty_corner'?"crafty-corner": allBlogPosts[index].category==='playtime_ideas'?"playtime-ideas":"cooking-with-kids"}
+                    href={
+                      allBlogPosts.length === 0
+                        ? "... Loading"
+                        : allBlogPosts[index].category === "crafty_corner"
+                        ? "crafty-corner"
+                        : allBlogPosts[index].category === "playtime_ideas"
+                        ? "playtime-ideas"
+                        : "cooking-with-kids"
+                    }
                   >
                     Read more in this category...
                   </a>
