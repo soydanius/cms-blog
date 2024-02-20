@@ -9,34 +9,23 @@
   background-color: #ffc43996;
   color: #47b5d0;
 }
-.extended-blog-post {
-  display: flex;
-  margin-bottom: 30px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  background-color: #47b5d0;
-}
 
 .blog-post-container {
   display: flex;
 
-  margin-bottom: 30px;
+  margin: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  width: 100%;
+  max-width: 100%;
   padding: 20px;
   text-align: center;
   /* background-color: rgba(0, 96, 151, 0.762); */
   background-color: #47b5d0;
+  align-items: center;
+  justify-content: center;
 }
 
 .blog-post-left {

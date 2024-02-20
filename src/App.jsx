@@ -5,6 +5,7 @@ import CookingWithKidsPage from "./pages/CookingWithKidsPage";
 import CraftyCornerPage from "./pages/CraftyCornerPage";
 import PlaytimeIdeasPage from "./pages/PlaytimeIdeasPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import { FaRegFileCode } from "react-icons/fa";
 
 function App() {
   return (

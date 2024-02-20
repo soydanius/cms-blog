@@ -1,8 +1,9 @@
 .hero-section {
+  margin: 0 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   gap: 20px;
-  background-color: rgba(255, 174, 124, 0.809);
 }
 
 .hero-content {
@@ -13,7 +14,7 @@
 
 .hero-section img {
   width: 40%;
-  max-height: 450px;
+  max-height: 500px;
 }
 
 .hero-introduction {

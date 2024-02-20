@@ -24,9 +24,9 @@ const CookingWithKidsPage = () => {
       <Header />
       <h1 className="category-title">Cooking with Kids</h1>
       <div>
-      {
-        blogPosts.map((index)=>(<BlogPost blogPosts={blogPosts} i={blogPosts.indexOf(index)}/>))
-        }
+        {blogPosts.map((index) => (
+          <BlogPost blogPosts={blogPosts} i={blogPosts.indexOf(index)} />
+        ))}
       </div>
       <Footer />
     </>
